@@ -4,7 +4,11 @@
              x:Class="SimpleNimbleExtended.MainPage">
 
     <Grid Padding="10,10,10,10">
-        <Button x:Name="bt_addAcount" Style="{DynamicResource Important}" Clicked="Bt_addAcount_Clicked" WidthRequest="65" Margin="0,0,20,20" HeightRequest="65" Text="+" VerticalOptions="End" HorizontalOptions="End" CornerRadius="20" FontSize="Title"/>
+
+        <Frame HasShadow="True"  WidthRequest="65" Padding="0" Margin="0,0,20,20" HeightRequest="65"  VerticalOptions="End" HorizontalOptions="End" CornerRadius="20">
+            <Button x:Name="bt_addAcount" Style="{DynamicResource Important}" Clicked="Bt_addAcount_Clicked" FontSize="Title" Text="+"/>
+        </Frame>
+
     </Grid>
 
 </ContentPage>
