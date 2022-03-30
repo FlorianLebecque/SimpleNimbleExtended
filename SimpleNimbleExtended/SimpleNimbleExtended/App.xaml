@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleNimbleExtended.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="text1">#FFF</Color>
+
+            <Color x:Key="darkBackground">#e1ebf2</Color>
+
+            <Style TargetType="Label" x:Key="title">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="TextColor" Value="{DynamicResource text1}"/>
+                <Setter Property="TextTransform" Value="Uppercase"/>
+            </Style>
+
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="Large"/>
+                <Setter Property="Padding" Value="15"/>
+            </Style>
+
+            <Style TargetType="Button" x:Key="Important">
+                <Setter Property="TextColor" Value="{DynamicResource text1}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource Primary}"/>
+
+            </Style>
+            
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>

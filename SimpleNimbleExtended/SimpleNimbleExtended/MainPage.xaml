@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleNimbleExtended.MainPage">
+
+    <Grid Padding="10,10,10,10">
+        <Button x:Name="bt_addAcount" Style="{DynamicResource Important}" Clicked="Bt_addAcount_Clicked" WidthRequest="65" Margin="0,0,20,20" HeightRequest="65" Text="+" VerticalOptions="End" HorizontalOptions="End" CornerRadius="20" FontSize="Title"/>
+    </Grid>
+
+</ContentPage>

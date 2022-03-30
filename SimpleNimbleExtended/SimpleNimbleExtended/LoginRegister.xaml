@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleNimbleExtended.LoginRegister">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center">
+
+            <Frame CornerRadius="5" Padding="0" Margin="20">
+                <Grid RowDefinitions="50,*" RowSpacing="0" >
+
+                    <Grid BackgroundColor="{DynamicResource Primary}" Grid.Row="0" VerticalOptions="FillAndExpand" Padding="30,0,15,0">
+                        <Label Style="{DynamicResource title}" VerticalOptions="Center"  TextColor="#FFFFFF">Register</Label>
+                        <Button x:Name="Bt_expendRegister" Clicked="Bt_expendRegister_Clicked" Text="▼" WidthRequest="50" HorizontalOptions="End"/>
+                    </Grid>
+                    <Grid x:Name="gd_register" HeightRequest="0" BackgroundColor="{DynamicResource darkBackground}" Grid.Row="1"  IsVisible="true" RowDefinitions="*,75" RowSpacing="0">
+                        <StackLayout Padding="15,15,15,0" Grid.Row="0">
+                            <Entry Placeholder="Username" HorizontalOptions="FillAndExpand" Keyboard="Default"/>
+                            <Entry Placeholder="Email" HorizontalOptions="FillAndExpand" Keyboard="Email"/>
+                            <Entry Placeholder="Password" HorizontalOptions="FillAndExpand" Keyboard="Default" IsPassword="True"/>
+                            <Entry Placeholder="Retype password" HorizontalOptions="FillAndExpand" Keyboard="Default" IsPassword="True"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Start" Padding="15,0,0,0" Orientation="Horizontal" Grid.Row="1">
+                            <Label VerticalOptions="Center">Keep</Label>
+                            <Switch IsToggled="True" />
+                        </StackLayout>
+                        <Button Grid.Row="1" Text="Register" VerticalOptions="End" HorizontalOptions="End" FontSize="Large" Padding="15" Margin="0,0,10,10"/>
+                    </Grid>
+                </Grid>
+            </Frame>
+
+            <Frame CornerRadius="5" Padding="0" Margin="20">
+                <Grid RowDefinitions="50,*" RowSpacing="0" >
+
+                    <Grid BackgroundColor="{DynamicResource Primary}" Grid.Row="0" VerticalOptions="FillAndExpand" Padding="30,0,15,0">
+                        <Label Style="{DynamicResource title}" VerticalOptions="Center"  TextColor="#FFFFFF">Login</Label>
+                        <Button x:Name="Bt_expendLogin" Clicked="Bt_expendLogin_Clicked" Text="▼" WidthRequest="50" HorizontalOptions="End"/>
+                    </Grid>
+                    <Grid x:Name="gd_login" HeightRequest="0" BackgroundColor="{DynamicResource darkBackground}" Grid.Row="1"  IsVisible="true" RowDefinitions="*,75" RowSpacing="0">
+                        <StackLayout Padding="15,15,15,0" Grid.Row="0">
+                            <Entry Placeholder="Email" HorizontalOptions="FillAndExpand" Keyboard="Email"/>
+                            <Entry Placeholder="Password" HorizontalOptions="FillAndExpand" Keyboard="Default" IsPassword="True"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Start" Padding="15,0,0,0" Orientation="Horizontal" Grid.Row="1">
+                            <Label VerticalOptions="Center">Keep</Label>
+                            <Switch IsToggled="True" />
+                        </StackLayout>
+                        <Button Grid.Row="1" Text="Login" VerticalOptions="End" HorizontalOptions="End" FontSize="Large" Padding="15" Margin="0,0,10,10"/>
+                    </Grid>
+                </Grid>
+            </Frame>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
