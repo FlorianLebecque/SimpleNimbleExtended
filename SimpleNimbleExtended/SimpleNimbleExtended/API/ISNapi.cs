@@ -5,9 +5,9 @@ using System.Text;
 namespace SimpleNimbleExtended.API {
     internal interface ISNapi {
 
-        Guid Login(string email, string password);
+        dynamic Login(string username, string password);
 
-        Guid Register(string email, string password);
+        dynamic Register(string username,string email, string password);
 
     }
 }
