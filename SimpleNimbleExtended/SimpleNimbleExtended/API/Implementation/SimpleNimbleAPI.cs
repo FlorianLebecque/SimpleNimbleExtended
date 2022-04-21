@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
+using System.Dynamic;
+using Newtonsoft.Json;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using RestSharp;
+using System.Threading.Tasks;
 
 namespace SimpleNimbleExtended.API.Implementation {
     internal class SimpleNimbleAPI : ISNapi {
@@ -15,42 +21,46 @@ namespace SimpleNimbleExtended.API.Implementation {
 
         }
 
-        private void CreateObject() {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(URL);
-            request.Method = "POST";
-            request.ContentType = "application/json";
+        private  object Post(object data,string path) {
 
-            //request.ContentLength = DATA.Length;
-            using (Stream webStream = request.GetRequestStream())
-            using (StreamWriter requestWriter = new StreamWriter(webStream, System.Text.Encoding.ASCII)) {
-                //requestWriter.Write(DATA);
-            }
+            var client = new RestClient(URL+"/"+path);
 
-            try {
-                WebResponse webResponse = request.GetResponse();
-                using (Stream webStream = webResponse.GetResponseStream() ?? Stream.Null)
-                using (StreamReader responseReader = new StreamReader(webStream)) {
-                    string response = responseReader.ReadToEnd();
-                    Console.Out.WriteLine(response);
-                }
-            } catch (Exception e) {
-                Console.Out.WriteLine("-----------------");
-                Console.Out.WriteLine(e.Message);
-            }
+            var request = new RestRequest();
+            request.RequestFormat = DataFormat.Json;
+            request.AddHeader("Content-Type", "application/json");
+            request.AddJsonBody(data);
+
+            RestResponse response = client.PostAsync(request).GetAwaiter().GetResult();
+
+            return JsonConvert.DeserializeObject(response.Content); 
         }
 
-        public Guid Login(string email, string password) {
+
+
+        public dynamic Login(string username, string password) {
 
 
             //rest api call for login
+            dynamic log_fom = new ExpandoObject();
+            log_fom.name = username;
+            log_fom.password = password;
 
+            
+           
+            return Post(log_fom,"user/login");
 
-
-            throw new NotImplementedException();
         }
 
-        public Guid Register(string email, string password) {
-            throw new NotImplementedException();
+        public dynamic Register(string username,string email, string password) {
+
+            //rest api call for login
+            dynamic log_fom = new ExpandoObject();
+            log_fom.name = username;
+            log_fom.email = email;
+            log_fom.password = password;
+
+
+            return Post(log_fom, "user/register"); ;
         }
     }
 }
