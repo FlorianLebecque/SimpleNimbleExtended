@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleNimbleExtended.Pages.SearchView">
+  <ContentView.Content>
+        <Grid RowDefinitions="Auto,*" Padding="10">
+            <SearchBar x:Name="tb_search" Placeholder="Find users"></SearchBar>
+            <CollectionView x:Name="cl_users" Grid.Row="1" ItemsSource="{Binding users}" >
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,10,0,10">
+                        <Frame  BackgroundColor="Transparent" HasShadow="True" Padding="0" CornerRadius="5">
+                            <Grid Padding="10" BackgroundColor="{DynamicResource darkBackground}">
+                            
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Frame BackgroundColor="Transparent" Grid.Column="0" Padding="0" HasShadow="False" CornerRadius="100" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="100" WidthRequest="100">
+                                    <Image Source="{Binding imgUrl}"/>
+                                </Frame>
+
+                                <Grid Margin="10,0,0,0" ColumnDefinitions="*,*" Grid.Column="1">
+                                    <Label Grid.Column="0" VerticalOptions="Center" HorizontalOptions="Start" Text="{Binding name}" FontSize="Title" FontAttributes="Bold" />
+                                    <Button Grid.Column="1" VerticalOptions="Center" HorizontalOptions="End" BindingContext="{Binding id}" Clicked="btn_go_click"  Text="go"/>
+                                </Grid>
+  
+                            </Grid>
+                        </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+      
+  </ContentView.Content>
+</ContentView>

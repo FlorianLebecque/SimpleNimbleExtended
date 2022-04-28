@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNimbleExtended.Androi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNimbleExtended.iOS", "SimpleNimbleExtended\SimpleNimbleExtended.iOS\SimpleNimbleExtended.iOS.csproj", "{75EECD18-40BC-4E88-8BE6-642A86699B1F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleNimbleExtended", "SimpleNimbleExtended\SimpleNimbleExtended\SimpleNimbleExtended.csproj", "{F718EB69-616B-4D8C-AFFD-1FBD8CF7C00A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleNimbleExtended", "SimpleNimbleExtended\SimpleNimbleExtended\SimpleNimbleExtended.csproj", "{F718EB69-616B-4D8C-AFFD-1FBD8CF7C00A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

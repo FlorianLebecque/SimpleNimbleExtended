@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SimpleNimbleExtended.Main">
   <!--Pages can be added as references or inline-->
-  <ContentPage Title="Home" />
-  <ContentPage Title="Search" />
-  <ContentPage Title="You" />
+  <ContentPage x:Name="homePage" Title="Home" />
+  <ContentPage x:Name="searchPage" Title="Search" />
+  <ContentPage x:Name="youPage" Title="You" />
 </TabbedPage>

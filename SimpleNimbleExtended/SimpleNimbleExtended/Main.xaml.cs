@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using SimpleNimbleExtended.Pages;
+
 namespace SimpleNimbleExtended {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Main : TabbedPage {
@@ -21,7 +23,10 @@ namespace SimpleNimbleExtended {
             lb.TextColor = Color.White;
 
             NavigationPage.SetTitleView(this,lb);
-            
+
+            homePage.Content = new HomeView();
+            searchPage.Content = new SearchView();
+            youPage.Content = new UserView(Controler.GetInstance().id);
         }
     }
 }

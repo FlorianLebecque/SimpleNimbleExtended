@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:md="clr-namespace:Xam.Forms.Markdown;assembly=Xam.Forms.Markdown"
+             x:Class="SimpleNimbleExtended.Pages.UserView">
+  <ContentView.Content>
+        <Grid RowDefinitions="auto,*">
+            <Frame Grid.Row="0" Padding="0" Margin="0,0,0,10" HasShadow="True">
+                <StackLayout  BackgroundColor="{DynamicResource darkBackground}" Padding="20">
+                    <Frame BackgroundColor="Transparent"  Padding="0" HasShadow="True" CornerRadius="100" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="150" WidthRequest="150">
+                        <Image x:Name="img_pp" />
+                    </Frame>
+                    <Grid ColumnDefinitions="2*,*" HorizontalOptions="CenterAndExpand">
+                        <Label Grid.Column="0" x:Name="lb_name" FontSize="64" HorizontalOptions="EndAndExpand"/>
+                        <Button x:Name="bt_follow" Clicked="Bt_follow_click" Grid.Column="1" Text="Follow" Style="{DynamicResource Important}" HorizontalOptions="StartAndExpand"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+            <CollectionView x:Name="cl_posts" Grid.Row="1">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10,10,10,10">
+                            <Frame BackgroundColor="Transparent" Padding="0" CornerRadius="5">
+                                <StackLayout BackgroundColor="{DynamicResource darkBackground}" Padding="10">
+                                    <Label FontSize="Title" Text="{Binding title}"/>
+                                    <md:MarkdownView Theme="{Binding MDTheme}" Markdown="{Binding content}"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        
+  </ContentView.Content>
+</ContentView>

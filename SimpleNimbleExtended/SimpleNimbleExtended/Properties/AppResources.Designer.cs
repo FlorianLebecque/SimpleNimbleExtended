@@ -61,7 +61,7 @@ namespace SimpleNimbleExtended.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to http://192.168.1.36:3000.
+        ///   Looks up a localized string similar to http://192.168.1.98:3000.
         /// </summary>
         public static string API_URL {
             get {

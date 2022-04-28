@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SimpleNimbleExtended.Pages.NewPostPage" NavigationPage.BackButtonTitle="Post Editor">
+    <ContentPage.Content>
+        <Grid RowDefinitions="auto,*,auto" Padding="10">
+            <Entry x:Name="tb_title" Grid.Row="0" Placeholder="Post title" FontSize="Title" />
+            <Editor x:Name="tb_content" Grid.Row="1" Placeholder="Markdown post" />
+
+            <Button Grid.Row="2" Text="save" Style="{DynamicResource Important}" Clicked="Btn_save_click" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

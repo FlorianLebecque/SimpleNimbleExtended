@@ -7,8 +7,6 @@
 
     <Grid Padding="10,10,10,10">
 
-        
-
         <ScrollView>
             <StackLayout x:Name="SL_Account" Orientation="Vertical">
                 

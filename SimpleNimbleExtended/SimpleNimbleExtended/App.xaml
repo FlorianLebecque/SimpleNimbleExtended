@@ -5,8 +5,10 @@
     <Application.Resources>
 
         <ResourceDictionary>
-            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Primary">#861b2d</Color>
             <Color x:Key="text1">#FFF</Color>
+
+            <Color x:Key="TextColor">#646c6f</Color>
 
             <Color x:Key="darkBackground">#e1ebf2</Color>
 
@@ -26,7 +28,19 @@
                 <Setter Property="BackgroundColor" Value="{DynamicResource Primary}"/>
 
             </Style>
-            
+
+            <Style TargetType="Button" x:Key="Follow">
+                <Setter Property="TextColor" Value="{DynamicResource text1}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource Primary}"/>
+
+            </Style>
+
+            <Style TargetType="Button" x:Key="UnFollow">
+                <Setter Property="TextColor" Value="{DynamicResource text1}"/>
+                <Setter Property="BackgroundColor" Value="{DynamicResource Primary}"/>
+
+            </Style>
+
         </ResourceDictionary>
         
     </Application.Resources>
