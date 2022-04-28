@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace SimpleNimbleExtended
@@ -14,11 +15,31 @@ namespace SimpleNimbleExtended
 
             InitializeComponent();
 
-            
+
+            base.OnAppearing();
+
+            RefreshCommand = new Command(LoadAccount);
 
         }
 
+        public ICommand RefreshCommand;
+        bool isRefreshing;
+        public bool IsRefreshing {
+            get => isRefreshing;
+            set {
+                isRefreshing = value;
+                OnPropertyChanged(nameof(IsRefreshing));
+            }
+        }
+
         public void LoadAccount() {
+
+            if (IsRefreshing) {
+                return;
+            }
+
+            IsRefreshing = true;
+
             Controler ctrl = Controler.GetInstance();
 
             SL_Account.Children.Clear();
@@ -129,7 +150,8 @@ namespace SimpleNimbleExtended
                 SL_Account.Children.Add(mainFram);
             }
 
-            base.OnAppearing();
+            IsRefreshing = false;
+
         }
 
         protected override void OnAppearing() {
@@ -141,12 +163,8 @@ namespace SimpleNimbleExtended
             Navigation.PushAsync(new LoginRegister());
         }
 
-        private void Bt_rm_btn_Clicked(object sender, EventArgs e) { 
+       
 
-        }
 
-        private void Bt_log_btn_Clicked(object sender, EventArgs e) {
-
-        }
     }
 }

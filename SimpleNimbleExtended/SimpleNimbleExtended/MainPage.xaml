@@ -10,31 +10,32 @@
         <ScrollView>
             <StackLayout x:Name="SL_Account" Orientation="Vertical">
                 
-                <Frame Padding="0" HasShadow="True" CornerRadius="5" Margin="0,15,0,15">
+                    <Frame Padding="0" HasShadow="True" CornerRadius="5" Margin="0,15,0,15">
                     
-                    <Grid Padding="10" BackgroundColor="{DynamicResource darkBackground}" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Frame BackgroundColor="Transparent" Grid.Column="0" Padding="0" HasShadow="False" CornerRadius="100" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="150" WidthRequest="150">
-                            <Image  Aspect="AspectFill" Source="https://avatars.dicebear.com/api/bottts/pers0ne.png"></Image>
-                        </Frame>
-                        <StackLayout Grid.Column="1" Padding="15,15,15,0">
-                            <Label FontSize="Title">pers0ne</Label>
-                            <Entry IsEnabled="False"  Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" Keyboard="Default"/>
-                            <Grid>
-                                <Button Text="x"  VerticalOptions="End" HorizontalOptions="Start" FontSize="Large" Padding="15" Margin="0,0,10,10" />
-                                <Button Text="Login" VerticalOptions="End" HorizontalOptions="End" FontSize="Large" Padding="15" Margin="0,0,10,10" />
-                            </Grid>
-                        </StackLayout>
-                    </Grid>
+                        <Grid Padding="10" BackgroundColor="{DynamicResource darkBackground}" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Frame BackgroundColor="Transparent" Grid.Column="0" Padding="0" HasShadow="False" CornerRadius="100" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="150" WidthRequest="150">
+                                <Image  Aspect="AspectFill" Source="https://avatars.dicebear.com/api/bottts/pers0ne.png"></Image>
+                            </Frame>
+                            <StackLayout Grid.Column="1" Padding="15,15,15,0">
+                                <Label FontSize="Title">pers0ne</Label>
+                                <Entry IsEnabled="False"  Placeholder="Password" IsPassword="True" HorizontalOptions="FillAndExpand" Keyboard="Default"/>
+                                <Grid>
+                                    <Button Text="x"  VerticalOptions="End" HorizontalOptions="Start" FontSize="Large" Padding="15" Margin="0,0,10,10" />
+                                    <Button Text="Login" VerticalOptions="End" HorizontalOptions="End" FontSize="Large" Padding="15" Margin="0,0,10,10" />
+                                </Grid>
+                            </StackLayout>
+                        </Grid>
                     
-                </Frame>
+                    </Frame>
 
-            </StackLayout>
+                </StackLayout>
             
-        </ScrollView>
+            </ScrollView>
+        </RefreshView>
 
         <Frame HasShadow="True"  WidthRequest="65" Padding="0" Margin="0,0,20,20" HeightRequest="65"  VerticalOptions="End" HorizontalOptions="End" CornerRadius="20">
             <Button x:Name="bt_addAcount" Style="{DynamicResource Important}" Clicked="Bt_addAcount_Clicked" FontSize="Title" Text="+"/>
