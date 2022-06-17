@@ -13,7 +13,7 @@ namespace SimpleNimbleExtended.API {
 
         dynamic AddNewPost(string username, string token, string title, string content, string imgUrl);
 
-        dynamic GetPostOfUser(string id);
+        dynamic GetPostOfUser(string id, DateTime lastPostDate);
 
         dynamic GetUserInfo(string id);
 

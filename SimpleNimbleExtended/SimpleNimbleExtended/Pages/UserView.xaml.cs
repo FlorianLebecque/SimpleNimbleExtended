@@ -21,7 +21,7 @@ namespace SimpleNimbleExtended.Pages {
             lb_name.Text = userInfo.name;
             img_pp.Source = userInfo.imgUrl;
 
-            List<PostInfo> posts = Controler.GetInstance().GetUserPost(id);
+            List<PostInfo> posts = Controler.GetInstance().GetUserPost(id,DateTime.MinValue);
 
           
             cl_posts.ItemsSource = posts;

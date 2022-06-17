@@ -11,6 +11,7 @@
             <Color x:Key="TextColor">#646c6f</Color>
 
             <Color x:Key="darkBackground">#e1ebf2</Color>
+            <Color x:Key="darkerBackground">#d4d7d9</Color>
 
             <Style TargetType="Label" x:Key="title">
                 <Setter Property="FontSize" Value="Large"/>

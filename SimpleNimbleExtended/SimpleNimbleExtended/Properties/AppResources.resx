@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="API_URL" xml:space="preserve">
-    <value>http://192.168.1.98:3000</value>
+    <value>http://192.168.1.36:3000</value>
   </data>
   <data name="SAVED_LOGIN" xml:space="preserve">
     <value>[]</value>

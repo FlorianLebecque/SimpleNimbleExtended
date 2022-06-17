@@ -5,21 +5,37 @@
              x:Class="SimpleNimbleExtended.Pages.HomeView">
   <ContentView.Content>
         <Grid Padding="10">
-            
-                <CollectionView x:Name="cl_posts">
+
+            <RefreshView Refreshing="Refresh">
+                <CollectionView x:Name="cl_posts" ItemsSource="{Binding postInfos}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Grid Padding="10,10,10,10">
-                                <Frame BackgroundColor="Transparent" Padding="0" CornerRadius="5">
-                                    <StackLayout BackgroundColor="{DynamicResource darkBackground}" Padding="10">
-                                        <Label FontSize="Title" Text="{Binding title}"/>
-                                        <md:MarkdownView Theme="{Binding MDTheme}" Markdown="{Binding content}"/>
-                                    </StackLayout>
-                                </Frame>
-                            </Grid>
+                            <Frame Padding="0" HasShadow="true" Margin="0">
+                                <Grid Padding="10,10,10,10">
+                                    <Frame HasShadow="True" BackgroundColor="Transparent" Padding="0" CornerRadius="5">
+                                        <StackLayout BackgroundColor="{DynamicResource darkBackground}" Padding="10">
+                                            <Grid ColumnDefinitions="auto,*,auto">
+                                                <Frame Grid.Column="0" BackgroundColor="Transparent"  Padding="0" HasShadow="True" CornerRadius="100" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50">
+                                                    <Image Source="{Binding authorImg}" />
+                                                </Frame>
+                                                <Label VerticalOptions="Center" Grid.Column="1" Text="{Binding author}" />
+                                                <Label VerticalOptions="Center" Grid.Column="2" Text="{Binding createdAt}" />
+                                            </Grid>
+                                            <Label FontSize="Title" Text="{Binding title}"/>
+                                            <md:MarkdownView Theme="{Binding MDTheme}" Markdown="{Binding content}"/>
+                                            <Grid ColumnDefinitions="auto,*,auto">
+                                                <Button Grid.Column="0" IsEnabled="{Binding isliked}" Text="▼"/>
+                                                <Label  Grid.Column="1" VerticalOptions="Center" HorizontalTextAlignment="Center" FontSize="Title" Text="{Binding score}"/>
+                                                <Button Grid.Column="2" IsEnabled="{Binding isDisliked}" Text="▲"/>
+                                            </Grid>
+                                        </StackLayout>
+                                    </Frame>
+                                </Grid>
+                            </Frame>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
+            </RefreshView>
             
             <Frame HasShadow="True"  WidthRequest="65" Padding="0" Margin="0,0,20,20" HeightRequest="65"  VerticalOptions="End" HorizontalOptions="End" CornerRadius="20">
                 <Button x:Name="bt_addAcount" Style="{DynamicResource Important}" Clicked="Btn_add_click" FontSize="Title" Text="+"/>

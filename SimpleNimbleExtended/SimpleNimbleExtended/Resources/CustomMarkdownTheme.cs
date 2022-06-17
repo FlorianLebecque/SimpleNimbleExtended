@@ -12,7 +12,7 @@ namespace SimpleNimbleExtended.Resources {
 
         public static readonly Color DefaultTextColor = (Color)Application.Current.Resources["TextColor"];
 
-        public static readonly Color DefaultCodeBackground = Color.FromHex("#4f5b66");
+        public static readonly Color DefaultCodeBackground = (Color)Application.Current.Resources["darkerBackground"];
 
         public static readonly Color DefaultSeparatorColor = Color.FromHex("#65737e");
 

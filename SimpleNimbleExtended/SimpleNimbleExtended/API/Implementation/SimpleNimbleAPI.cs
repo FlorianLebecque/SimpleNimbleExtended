@@ -118,9 +118,11 @@ namespace SimpleNimbleExtended.API.Implementation {
             return Post(post_form, "post/new",headers);
         }
 
-        public dynamic GetPostOfUser(string id) {
-            return Get("user/posts/" + id);
+        public dynamic GetPostOfUser(string id, DateTime lastPostDate) {
 
+            string sqlDate = lastPostDate.ToString("yyyy-MM-dd HH:mm:ss.fff");
+
+            return Get("user/posts/" + id+"?date="+sqlDate);
         }
 
         public dynamic GetUserInfo(string id) {

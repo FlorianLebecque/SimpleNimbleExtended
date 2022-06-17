@@ -16,9 +16,9 @@ namespace SimpleNimbleExtended {
 
         }
 
-        public List<PostInfo> GetUserPost(string id) {
+        public List<PostInfo> GetUserPost(string id, DateTime lastPostDate) {
             try {
-                dynamic result = sNapi.GetPostOfUser(id);
+                dynamic result = sNapi.GetPostOfUser(id, lastPostDate);
 
                 List<PostInfo> posts = new List<PostInfo>();
                 foreach (dynamic postObj in result) {
@@ -28,6 +28,11 @@ namespace SimpleNimbleExtended {
                         (string)postObj.title,
                         (string)postObj.content
                     );
+
+                    UserInfo authorInfo = GetUserInfo((string)postObj.author);
+
+                    resultPostInfo.author = authorInfo.name;
+                    resultPostInfo.authorImg = authorInfo.imgUrl;
 
                     resultPostInfo.createdAt = Convert.ToDateTime(postObj.createdAt);
 
@@ -41,14 +46,18 @@ namespace SimpleNimbleExtended {
             }
         }
 
-        public List<PostInfo> GetTimeLinePost() {
+        public List<PostInfo> GetTimeLinePost(DateTime ?lastPostDate = null) {
 
             List<string> followedUser = GetFollowedUser();
 
             List<PostInfo> all_posts = new List<PostInfo>();
 
+            if(lastPostDate == null) {
+                lastPostDate = DateTime.MinValue;
+            }
+
             foreach (string user_id in followedUser) {
-                List<PostInfo> posts = GetUserPost(user_id);
+                List<PostInfo> posts = GetUserPost(user_id, (DateTime)lastPostDate);
 
                 all_posts.AddRange(posts);
             }
